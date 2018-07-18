@@ -1,12 +1,12 @@
 const number_of_boxes_in_row = 10;
-const number_of_boxes_in_column = 1;
+const number_of_boxes_in_column = 10;
 
 let box_width, box_height;
 
 function setup(){
-    createCanvas(600,600);
-    box_height = height;
-    box_width = ___;
+    createCanvas(1000,1000);
+    box_height = 1000 / number_of_boxes_in_column;
+    box_width = 1000 / number_of_boxes_in_row;
     // TASK #1 - set the box_width as the width of the canvas
     // divided by the number of boxes in a row.
 }
@@ -14,13 +14,13 @@ function setup(){
 function draw(){
     // TASK #2 - loop through each box in the row by
     // replacing the blank with the correct number/variable
-    for(let i = 0; i < ___ ; i++){
-        const y = ___;
+    for(let i = 0; i < number_of_boxes_in_row ; i++){
+        //const y = box_height;
         // TASK #3 - replace the blank with the y-coordinate for 
         // current box
         // HINT: it will always be the same
 
-        const x = ___;
+        const x = i*box_width;
         // TASK #4 - replace the blank with the x-coordinate for 
         // current box
         // HINT: this changes with each box in the row
@@ -33,6 +33,7 @@ function draw(){
         // the whole width of the canvas. If you see something
         // different, check over what you've done!
 
+
         // TASK #6 - In the setup function, change the width of the 
         // canvas to something else (like 1000). The boxes should 
         // still take up the whole width of the canvas. If you see 
@@ -40,6 +41,7 @@ function draw(){
 
         // TASK #7 - At the stop of this script, set the 
         // variable "number_of_boxes_in_column" to 10
+
 
         // TASK #8 - Create another for loop under this task that
         // loops through each box in the column, using "j" as the 
@@ -49,7 +51,10 @@ function draw(){
         // NOTE: this is a nested "for" loop, a loop within
         // a loop! Loop-ception?
 
-        // create 2nd loop here!
+        for (j = 0; j < number_of_boxes_in_column ; j++){
+            customFill(i,y);
+            rect(x,y,box_width,box_height);
+        }
 
         // TASK #9 - comment out the "const y" from earlier
         
@@ -66,8 +71,7 @@ function draw(){
         // TASK #12 - cut and paste the code for drawing the box into the 2nd "for" loop
 
         // Drawing box
-        customFill(i,y);
-        rect(x,y,box_width,box_height);
+
 
         // TASK #13 - At the top of the document change the 
         // number_of_boxes_in_column variable to another
