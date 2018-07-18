@@ -52,6 +52,8 @@ function draw(){
         // a loop! Loop-ception?
 
         for (j = 0; j < number_of_boxes_in_column ; j++){
+            
+            const y = j*box_height;
             customFill(i,y);
             rect(x,y,box_width,box_height);
         }
